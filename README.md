@@ -17,7 +17,7 @@ To use this project, follow these steps:
 
     (GOOGLE_API_KEY = "your key") 
 5. You are ready to run the project now. Write the code in your terminal.
-```
-streamlit run Webanix_task.py
-```
+   ```
+   streamlit run Webanix_task.py
+   ```
 
