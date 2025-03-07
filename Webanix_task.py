@@ -30,14 +30,14 @@ class MultiLLM:
             image = Image.open(uploaded_file)
             st.image(image, caption="Uploaded Image.", use_container_width=True)
             try:
-                model = genai.GenerativeModel("gemini-2.0-flash") # Using Google's Gemini 2.0 flash model 
+                model = genai.GenerativeModel("gemini-2.0-flash") # Using Google's Gemini 2.0 flash model. 
                 buffered = io.BytesIO() # Converting images to bytes for the model.
-                image.save(buffered, format="JPEG")
+                image.save(buffered, format="JPEG") # Saving the image into buffer and converting the image into standard JPEG format.
                 image_bytes = buffered.getvalue()
-                response = model.generate_content([ # Making request to the model
+                response = model.generate_content([ # Making request to the model.
                     {
                         "parts": [
-                            {"text": # Promt for the LLM model
+                            {"text": # Promt for the LLM model.
                              "You are an advanced AI assistant skilled in image analysis and natural language processing, with a strong focus on extracting text from images and providing insightful summaries. You also excel in performing sentiment analysis on the extracted content, determining the emotional tone and overall sentiment."
                             "Your task is to analyze an image provided to you for text extraction and sentiment analysis. Please follow these guidelines:"
                             "Extract any visible text from the image accurately."
@@ -59,7 +59,7 @@ class MultiLLM:
 
 st.set_page_config(page_title="AI Image Analyzer", page_icon="🖼️", layout="centered")
 
-st.markdown( # Custom Styling for Streamlit
+st.markdown( # Custom Styling for Streamlit.
     """
     <style>
     [data-testid="stSidebar"] { display: none; }
@@ -96,7 +96,7 @@ with col2:
     uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png"], label_visibility="hidden")
     analyze = st.button("Analyze Image", use_container_width=True)
 
-multi_llm = MultiLLM() # Object creation for the class MultiLLM
+multi_llm = MultiLLM() # Object creation for the class MultiLLM.
 if analyze and uploaded_file is not None:
     with st.spinner("Analyzing..."):
         result = multi_llm.analyze_image(uploaded_file)
