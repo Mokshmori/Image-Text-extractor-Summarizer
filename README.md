@@ -7,7 +7,9 @@ To use this project, follow these steps:
 1. Clone the repository to your local machine.
 2. Install all the dependencies.
    
-   (pip install streamlit pillow google-generativeai python-dotenv)
+   ```
+   pip install -r requirements.txt 
+   ```
 3. Get your API key from the following link.
 
    (https://aistudio.google.com/app/apikey)
